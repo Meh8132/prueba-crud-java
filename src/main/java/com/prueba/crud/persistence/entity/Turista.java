@@ -21,18 +21,19 @@ public class Turista {
     private BigDecimal presupuestoViaje;
     private Boolean usaTarjeta;
     @Column(name = "IdCiudad_Ciudad")
-    private Integer ciudadDestino;
+    private Integer idCiudadDestino;
 
 //    Relaciones
 
     @ManyToOne
     @JoinColumn(name = "IdCiudad_Ciudad", insertable = false, updatable = false)
-    private Ciudad Ciudad;
+    private Ciudad ciudad;
 
-    @OneToMany(mappedBy = "Turista")
-    private List<Asignacion> Asignaciones;
+    @OneToMany(mappedBy = "turista")
+    private List<Asignacion> asignaciones;
 
 //  Getters y Setters
+
 
     public Integer getIdTurista() {
         return idTurista;
@@ -90,12 +91,27 @@ public class Turista {
         this.usaTarjeta = usaTarjeta;
     }
 
-    public Integer getCiudadDestino() {
-        return ciudadDestino;
+    public Integer getIdCiudadDestino() {
+        return idCiudadDestino;
     }
 
-    public void setCiudadDestino(Integer ciudadDestino) {
-        this.ciudadDestino = ciudadDestino;
+    public void setIdCiudadDestino(Integer idCiudadDestino) {
+        this.idCiudadDestino = idCiudadDestino;
     }
 
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
+    }
+
+    public void setAsignaciones(List<Asignacion> asignaciones) {
+        this.asignaciones = asignaciones;
+    }
 }

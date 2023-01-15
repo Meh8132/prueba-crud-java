@@ -24,13 +24,14 @@ public class Asignacion {
 
     @ManyToOne
     @JoinColumn(name = "IdCiudad_Ciudad", insertable = false, updatable = false)
-    private Ciudad Ciudad;
+    private Ciudad ciudad;
 
     @ManyToOne
     @JoinColumn(name = "IdTurista_Turista", insertable = false, updatable = false)
-    private Turista Turista;
+    private Turista turista;
 
 //    Getters y Setters
+
 
     public Integer getIdAsignacion() {
         return idAsignacion;
@@ -70,5 +71,21 @@ public class Asignacion {
 
     public void setCiudadFK(Integer ciudadFK) {
         this.ciudadFK = ciudadFK;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Turista getTurista() {
+        return turista;
+    }
+
+    public void setTurista(Turista turista) {
+        this.turista = turista;
     }
 }

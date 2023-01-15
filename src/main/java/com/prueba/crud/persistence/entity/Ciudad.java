@@ -19,13 +19,14 @@ public class Ciudad {
 
 //    Relaciones
 
-    @OneToMany(mappedBy = "Ciudad")
-    private List<Turista> Turistas;
+    @OneToMany(mappedBy = "ciudad")
+    private List<Turista> turistas;
 
-    @OneToMany(mappedBy = "Ciudad")
-    private List<Asignacion> Asignaciones;
+    @OneToMany(mappedBy = "ciudad")
+    private List<Asignacion> asignaciones;
 
 //    Getters y Setters
+
 
     public Integer getIdCiudad() {
         return idCiudad;
@@ -65,5 +66,21 @@ public class Ciudad {
 
     public void setHotel(String hotel) {
         this.hotel = hotel;
+    }
+
+    public List<Turista> getTuristas() {
+        return turistas;
+    }
+
+    public void setTuristas(List<Turista> turistas) {
+        this.turistas = turistas;
+    }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
+    }
+
+    public void setAsignaciones(List<Asignacion> asignaciones) {
+        this.asignaciones = asignaciones;
     }
 }
